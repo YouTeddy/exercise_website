@@ -13,13 +13,6 @@ body {
   margin-bottom: 30px;
 }
 
-.profile img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
 .profile h1 {
   font-size: 1.5em;
   margin: 10px 0 5px;
@@ -30,34 +23,102 @@ body {
   color: #555;
 }
 
+/* 검색창 스타일 */
+.search-container {
+  display: flex;
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 400px;
+  gap: 10px; /* 입력창과 버튼 사이 간격 */
+}
+
+.search-container input[type="text"] {
+  flex-grow: 1; /* 남은 공간을 채우도록 */
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1em;
+}
+
+.search-container button {
+  padding: 12px 20px;
+  background-color: #007bff; /* 파란색 버튼 */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.2s;
+}
+
+.search-container button:hover {
+  background-color: #0056b3;
+}
+
 .link-list {
   width: 100%;
   max-width: 400px;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 30px; /* 각 운동 카테고리 사이 간격 */
 }
 
-.link-list div {
+.link-list div { /* 각 운동 카테고리 (가슴, 등 등) */
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 12px; /* 카테고리 내 링크 사이 간격 */
+  background-color: #ffffff; /* 카테고리 배경색 */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03); /* 가벼운 그림자 */
 }
 
+.link-list h2 {
+  font-size: 1.2em;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee; /* 하단 구분선 */
+  padding-bottom: 10px;
+}
+
+
 .link-list a {
-  display: block;
+  display: flex; /* 아이콘이 없지만, 텍스트 정렬을 위해 flex 유지 */
+  align-items: center; /* 세로 중앙 정렬 */
   text-decoration: none;
-  background-color: white;
-  padding: 15px;
-  border-radius: 12px;
-  text-align: center;
+  background-color: #f9f9f9; /* 각 링크의 배경색 */
+  padding: 12px 15px;
+  border-radius: 8px;
   font-weight: bold;
   color: #333;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .link-list a:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* 검색으로 인해 숨겨진 요소에 대한 스타일 */
+.link-list a[style*="display: none"] {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    border: none;
+    transition: all 0.3s ease-out;
+}
+
+/* 검색으로 인해 숨겨진 카테고리 div에 대한 스타일 */
+.link-list div[style*="display: none"] {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    border: none;
+    transition: all 0.3s ease-out;
 }
