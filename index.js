@@ -3,10 +3,15 @@ function searchExercises() {
   const exerciseLinks = document.querySelectorAll('.link-list a');
   const exerciseCategories = document.querySelectorAll('.link-list > div'); // 각 운동 카테고리 div
 
+  let foundLink = null; // 검색된 첫 번째 링크를 저장할 변수
+
   exerciseLinks.forEach(link => {
     const exerciseName = link.textContent.toLowerCase();
     if (exerciseName.includes(searchTerm)) {
       link.style.display = 'flex'; // 보이게 함
+      if (foundLink === null) { // 첫 번째로 검색된 링크를 저장
+        foundLink = link;
+      }
     } else {
       link.style.display = 'none'; // 숨김
     }
@@ -14,8 +19,8 @@ function searchExercises() {
 
   // 검색 후, 모든 링크가 숨겨진 카테고리는 숨기기
   exerciseCategories.forEach(category => {
-      const visibleLinksIn bloodshed = category.querySelectorAll('a[style*="display: flex"]');
-      if (visibleLinksIn bloodshed.length === 0 && searchTerm !== "") { // 검색어가 있고 보이는 링크가 없으면
+      const visibleLinksInCategory = category.querySelectorAll('a[style*="display: flex"]');
+      if (visibleLinksInCategory.length === 0 && searchTerm !== "") { // 검색어가 있고 보이는 링크가 없으면
           category.style.display = 'none';
       } else {
           category.style.display = 'flex'; // 아니면 보이게 함
@@ -30,6 +35,14 @@ function searchExercises() {
       exerciseCategories.forEach(category => {
           category.style.display = 'flex';
       });
+  } else {
+      // 검색어가 있고, 검색된 링크가 있다면 해당 위치로 스크롤 이동
+      if (foundLink) {
+          foundLink.scrollIntoView({
+              behavior: 'smooth', // 부드러운 스크롤 효과
+              block: 'center'    // 요소가 뷰포트의 중앙에 오도록 스크롤 (조절 가능: 'start', 'end', 'nearest')
+          });
+      }
   }
 }
 
