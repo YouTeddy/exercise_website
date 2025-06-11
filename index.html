@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>나의 링크 모음</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background: #f5f5f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 15px;
+    }
+
+    .profile {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .profile img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .profile h1 {
+      font-size: 1.5em;
+      margin: 10px 0 5px;
+    }
+
+    .profile p {
+      font-size: 0.95em;
+      color: #555;
+    }
+
+    .link-list {
+      width: 100%;
+      max-width: 400px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .link-list div {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .link-list a {
+      display: block;
+      text-decoration: none;
+      background-color: white;
+      padding: 15px;
+      border-radius: 12px;
+      text-align: center;
+      font-weight: bold;
+      color: #333;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .link-list a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="profile">
+    <img src="https://via.placeholder.com/100" alt="Profile Image" />
+    <h1>홍길동</h1>
+    <p>운동 방법들</p>
+  </div>
+
+  <div class="link-list">
+    <div class="chest">
+      <a href="">벤치프레스</a>
+      <a href="">인클라인 덤벨 프레스</a>
+      <a href="">체스트 플라이 머신</a>
+    </div>
+    <div class="back">
+      <a href=""></a>
+      <a href=""></a>
+      <a href=""></a>
+    </div>
+    <div class="legs">
+      <a href=""></a>
+      <a href=""></a>
+      <a href=""></a>
+    </div>
+    <div class="shoulder">
+      <a href=""></a>
+      <a href=""></a>
+      <a href=""></a>
+    </div>
+    <div class="belly">
+      <a href=""></a>
+      <a href=""></a>
+      <a href=""></a>
+    </div>
+    <div class="body">
+      <a href=""></a>
+      <a href=""></a>
+      <a href=""></a>
+    </div>
+  </div>
+
+</body>
+</html>
